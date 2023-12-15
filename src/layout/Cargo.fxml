@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="691.0" prefWidth="1041.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CargoController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="1041.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="bactToLoginMenu" mnemonicParsing="false" onAction="#backToLogin" text="Back to Login" />
+                  <Menu mnemonicParsing="false" text="New">
+                    <items>
+                        <MenuItem fx:id="RepositoryMenu" mnemonicParsing="false" onAction="#openRepository" text="Repository" />
+                        <MenuItem fx:id="logisticsMenu" mnemonicParsing="false" onAction="#openLogistics" text="Logistics" />
+                        <MenuItem fx:id="InvoiceMenu" mnemonicParsing="false" onAction="#openInvoice" text="Invoice" />
+                        <MenuItem mnemonicParsing="false" onAction="#openCustomer" text="Customer" />
+                      <MenuItem fx:id="adminMenu" mnemonicParsing="false" onAction="#openAdmin" text="Administrator Interface" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <HBox fx:id="hBox" layoutX="34.0" layoutY="55.0" prefHeight="582.0" prefWidth="973.0" />
+   </children>
+</AnchorPane>

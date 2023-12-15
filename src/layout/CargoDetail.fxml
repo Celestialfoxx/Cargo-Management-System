@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="665.0" prefWidth="1043.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CargoDetailController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="1043.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#backToLogin" text="Bact to Login" />
+                  <Menu mnemonicParsing="false" text="New">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openCargo" text="Cargo" />
+                      <MenuItem mnemonicParsing="false" onAction="#openRepository" text="Repository" />
+                        <MenuItem mnemonicParsing="false" onAction="#openLogistics" text="Logistics" />
+                        <MenuItem mnemonicParsing="false" onAction="#openInvoice" text="Invoice" />
+                        <MenuItem mnemonicParsing="false" onAction="#openCustomer" text="Customer" />
+                        <MenuItem mnemonicParsing="false" onAction="#openAdmin" text="Administrator Interface" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="tableView" layoutY="26.0" prefHeight="638.0" prefWidth="758.0">
+        <columns>
+          <TableColumn fx:id="item_id" prefWidth="120.66668450832367" text="item_ID" />
+          <TableColumn fx:id="price" prefWidth="124.66666412353516" text="Price" />
+            <TableColumn fx:id="returned" prefWidth="125.99992370605469" text="Returned" />
+            <TableColumn fx:id="timeStored" prefWidth="152.00003051757812" text="Time_in_store" />
+            <TableColumn fx:id="timeOutStored" prefWidth="120.00006103515625" text="Time_out_store" />
+            <TableColumn fx:id="status" prefWidth="117.33331298828125" text="status" />
+        </columns>
+      </TableView>
+      <Button fx:id="sell" layoutX="851.0" layoutY="224.0" mnemonicParsing="false" onMouseClicked="#sell" prefHeight="49.0" prefWidth="101.0" style="-fx-background-color: #B22222;" text="Sell" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Label layoutX="758.0" layoutY="318.0" minHeight="0.0" prefHeight="1.0" prefWidth="287.0" style="-fx-background-color: #000000;" text="Label" />
+      <Button fx:id="inStore" layoutX="851.0" layoutY="449.0" mnemonicParsing="false" onMouseClicked="#addItem" prefHeight="49.0" prefWidth="101.0" style="-fx-background-color: #551A8B;" text="In Store" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <TextField fx:id="itid_txt" layoutX="855.0" layoutY="78.0" />
+      <Label layoutX="787.0" layoutY="78.0" prefHeight="23.0" prefWidth="53.0" text="item_ID" />
+      <Label layoutX="787.0" layoutY="143.0" prefHeight="23.0" prefWidth="67.0" text="consumer" />
+      <TextField fx:id="consu_txt" layoutX="855.0" layoutY="143.0" />
+      <CheckBox fx:id="checkBox" layoutX="864.0" layoutY="393.0" mnemonicParsing="false" text="Returned" />
+      <Label layoutX="758.0" layoutY="533.0" minHeight="0.0" prefHeight="1.0" prefWidth="287.0" style="-fx-background-color: #000000;" text="Label" />
+   </children>
+</AnchorPane>

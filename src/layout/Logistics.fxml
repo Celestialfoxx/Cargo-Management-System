@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="697.0" prefWidth="1049.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.LogisticsController">
+   <children>
+      <MenuBar layoutY="1.0" prefHeight="25.0" prefWidth="1049.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="backToLoginMenu" mnemonicParsing="false" onAction="#backToLogin" text="Back to Login" />
+                  <Menu mnemonicParsing="false" text="New">
+                    <items>
+                        <MenuItem fx:id="cargoMenu" mnemonicParsing="false" onAction="#openCargo" text="Cargo" />
+                      <MenuItem fx:id="repositoryMenu" mnemonicParsing="false" onAction="#openRepository" text="Repository" />
+                        <MenuItem fx:id="invoiceMenu" mnemonicParsing="false" onAction="#openInvoice" text="Invoice" />
+                        <MenuItem mnemonicParsing="false" onAction="#openCustomer" text="Customer" />
+                        <MenuItem fx:id="adminMenu" mnemonicParsing="false" onAction="#openAdmin" text="Administrator Interface" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <SplitPane layoutX="-2.0" layoutY="24.0" prefHeight="629.0" prefWidth="825.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="627.0" prefWidth="744.0">
+               <children>
+                  <Pane layoutX="4.0" layoutY="-2.0" prefHeight="34.0" prefWidth="823.0">
+                     <children>
+                        <Label fx:id="label_top" layoutX="384.0" layoutY="7.0" text="Query" textFill="#c00e82">
+                           <font>
+                              <Font size="19.0" />
+                           </font>
+                        </Label>
+                        <ImageView fx:id="back" fitHeight="34.0" fitWidth="35.0" onMouseClicked="#ClickBack" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../img/back.png" />
+                           </image>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </ImageView>
+                     </children>
+                  </Pane>
+                  <TableView fx:id="tableView" layoutY="33.0" prefHeight="594.0" prefWidth="823.0">
+                    <columns>
+                      <TableColumn fx:id="shipmentID" prefWidth="84.66665661334991" text="shipmentID" />
+                      <TableColumn fx:id="departureDate" minWidth="0.0" prefWidth="98.66665649414062" text="departureDate" />
+                        <TableColumn fx:id="arrivalDate" prefWidth="88.0" text="arrivalDate" />
+                        <TableColumn fx:id="origin" prefWidth="101.33331298828125" text="origin" />
+                        <TableColumn fx:id="destination" prefWidth="98.6666259765625" text="destination" />
+                        <TableColumn fx:id="location" prefWidth="108.66668701171875" text="location" />
+                        <TableColumn fx:id="cargoID" prefWidth="101.33331298828125" text="cargoID" />
+                        <TableColumn fx:id="transportID" prefWidth="85.33331298828125" text="transportID" />
+                        <TableColumn fx:id="itemID" prefWidth="57.3333740234375" text="itemID" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+    <AnchorPane layoutX="823.0" layoutY="24.0" minHeight="0.0" minWidth="0.0" prefHeight="615.0" prefWidth="227.0">
+         <children>
+            <Button layoutX="58.0" layoutY="89.0" mnemonicParsing="false" onAction="#ClickMe" style="-fx-background-color: #C1FFC1;" text="Submit Query">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+            <ChoiceBox fx:id="choiceBox1" layoutX="58.0" layoutY="13.0" prefHeight="23.0" prefWidth="161.0" style="-fx-background-color: #FFF0F5;" />
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutY="12.0" prefHeight="25.0" prefWidth="56.0" text="Query" textFill="#d04372" />
+            <TextField fx:id="textField1" layoutX="58.0" layoutY="52.0" />
+            <Label graphicTextGap="2.0" layoutX="-2.0" layoutY="138.0" minHeight="0.0" prefHeight="0.0" prefWidth="221.0" style="-fx-background-color: #000000;" text="Label" />
+            <Label layoutX="-1.0" layoutY="145.0" minHeight="0.0" prefHeight="1.0" prefWidth="227.0" style="-fx-background-color: #000000;" text="Label" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

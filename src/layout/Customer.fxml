@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Accordion?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="687.0" prefWidth="456.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="layout.CustomerController">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="File">
+            <items>
+              <MenuItem fx:id="backToLoginMenu" mnemonicParsing="false" onAction="#backToLogin" text="Back to Login" />
+                  <Menu mnemonicParsing="false" text="New">
+                    <items>
+                      <MenuItem fx:id="cargoMenu" mnemonicParsing="false" onAction="#openCargo" text="Cargo" />
+                        <MenuItem fx:id="repositoryMenu" mnemonicParsing="false" onAction="#openRepository" text="Repository" />
+                        <MenuItem fx:id="logisticsMenu" mnemonicParsing="false" onAction="#openLogistics" text="Logistics" />
+                        <MenuItem fx:id="InvoiceMenu" mnemonicParsing="false" onAction="#openInvoice" text="Invoice" />
+                        <MenuItem mnemonicParsing="false" onAction="#openAdmin" text="Administrator Interface" />
+                    </items>
+                  </Menu>
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Edit">
+            <items>
+              <MenuItem mnemonicParsing="false" text="Add" />
+                  <MenuItem fx:id="op_edit" mnemonicParsing="false" text="Edit" />
+                  <MenuItem fx:id="op_delete" mnemonicParsing="false" text="Delete" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Help">
+            <items>
+              <MenuItem mnemonicParsing="false" text="About" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="table" tableMenuButtonVisible="true">
+        <columns>
+          <TableColumn fx:id="idColumn" prefWidth="75.0" text="CustomerID" />
+          <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Name" />
+            <TableColumn fx:id="contactColumn" minWidth="20.0" prefWidth="130.0" text="Contact" />
+            <TableColumn fx:id="addressColumn" minWidth="20.0" prefWidth="130.0" text="Address" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Accordion>
+        <panes>
+          <TitledPane animated="false" text="Add">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutY="6.0" prefHeight="28.0" prefWidth="142.0">
+                           <children>
+                              <Label layoutY="7.0" text="CustomerID" />
+                              <TextField fx:id="customerID_text" layoutX="70.0" layoutY="2.0" prefHeight="26.0" prefWidth="94.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutX="185.0" layoutY="6.0" prefHeight="28.0" prefWidth="142.0">
+                           <children>
+                              <Label layoutX="-8.0" layoutY="7.0" prefHeight="17.0" prefWidth="60.0" text="UserName" />
+                              <TextField fx:id="address_text" layoutX="54.0" layoutY="2.0" prefHeight="26.0" prefWidth="91.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="34.0" prefHeight="28.0" prefWidth="142.0">
+                           <children>
+                              <Label layoutX="14.0" layoutY="7.0" text="Name" />
+                              <TextField fx:id="name_text" layoutX="70.0" layoutY="1.0" prefHeight="26.0" prefWidth="93.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane layoutY="62.0" prefHeight="28.0" prefWidth="142.0">
+                           <children>
+                              <Label layoutY="7.0" text="Contact" />
+                              <TextField fx:id="contact_text" layoutX="71.0" layoutY="2.0" prefHeight="26.0" prefWidth="91.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="add_button" layoutX="197.0" layoutY="35.0" mnemonicParsing="false" onAction="#op_add_event" prefHeight="26.0" prefWidth="60.0" text="Submit" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Delete">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane layoutX="14.0" prefHeight="28.0" prefWidth="142.0">
+                           <children>
+                              <Label layoutX="-12.0" layoutY="7.0" text="CustomerID" />
+                              <TextField fx:id="delete_id_text" layoutX="54.0" layoutY="2.0" prefHeight="26.0" prefWidth="91.0" />
+                           </children>
+                        </AnchorPane>
+                        <Button fx:id="delete_button" layoutX="172.0" layoutY="2.0" mnemonicParsing="false" onAction="#delete_event" text="Delete" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+          <TitledPane animated="false" text="Edit">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <AnchorPane prefHeight="28.0" prefWidth="142.0">
+                           <children>
+                              <Label layoutY="7.0" text="CustomerID" />
+                              <TextField fx:id="edit_id_text" layoutX="86.0" layoutY="3.0" prefHeight="26.0" prefWidth="91.0" />
+                           </children>
+                        </AnchorPane>
+                        <ChoiceBox fx:id="edit_choice" layoutX="227.0" layoutY="1.0" prefHeight="26.0" prefWidth="70.0" />
+                        <TextField fx:id="edit_text" layoutX="300.0" layoutY="1.0" prefHeight="26.0" prefWidth="91.0" />
+                        <Button fx:id="edit_button" layoutX="145.0" layoutY="64.0" mnemonicParsing="false" onAction="#edit_event" prefHeight="26.0" prefWidth="113.0" text="Edit" />
+                     </children></AnchorPane>
+            </content>
+          </TitledPane>
+        </panes>
+      </Accordion>
+   </children>
+</VBox>
